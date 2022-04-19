@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class EmprestimoTest {
     private LocalDate DataEmprestimo=LocalDate.now();
     private LocalDate DataDevolucao;
-    private Usuario usuario;
     private Copia copia;
     private Emprestimo emprestimo;
 
