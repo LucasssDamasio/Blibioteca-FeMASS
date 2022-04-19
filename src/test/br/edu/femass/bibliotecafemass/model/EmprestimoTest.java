@@ -13,20 +13,21 @@ class EmprestimoTest {
     private Copia copia;
     private Emprestimo emprestimo;
 
-    @Test
+   @Test
     void EmprestimoAluno() {
 
-        Emprestimo emprestimo= new Emprestimo(usuario,copia);
+        Usuario usuario = new Aluno("Joao", 123, 1234);
+        Emprestimo emprestimo = new Emprestimo(usuario, copia);
         emprestimo.setDataDevolucao(emprestimo.getDataEmprestimo().plusDays(5));
-        // assertEquals(emprestimo.getDataDevolucao().minusDays(5),emprestimo.getDataEmprestimo());
+        assertEquals(emprestimo.getDataDevolucao().minusDays(5),emprestimo.getDataEmprestimo());
 
     }
     @Test
     void EmprestimoProfessor() {
-        Emprestimo emprestimo= new Emprestimo(usuario,copia);
+        Usuario usuario = new Professor("Joao", 123, 1234);
+        Emprestimo emprestimo= new Emprestimo(null,copia);
         emprestimo.setDataDevolucao(emprestimo.getDataEmprestimo().plusDays(30));
-        //assertEquals(emprestimo.getDataDevolucao().minusDays(30),emprestimo.getDataEmprestimo());
-
+        assertEquals(emprestimo.getDataDevolucao().minusDays(30),emprestimo.getDataEmprestimo());
     }
 
 }
